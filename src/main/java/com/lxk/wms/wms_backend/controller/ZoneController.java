@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Tag(name = "ZoneController", description = "库区管理接口")
+@Tag(name = "库区管理接口", description = "库区的增删改查接口")
 @RestController
 @RequestMapping("/zone")
 public class ZoneController {

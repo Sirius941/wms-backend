@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 import java.time.LocalDateTime;
 
+
 @Data
 @TableName("wms_product_tag")
 public class ProductTag {

@@ -6,9 +6,11 @@ import com.lxk.wms.wms_backend.dto.InventorySummaryDTO;
 import com.lxk.wms.wms_backend.entity.Inventory;
 import com.lxk.wms.wms_backend.service.InventoryService;
 import com.lxk.wms.wms_backend.service.impl.InventoryServiceImpl;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "库存管理接口", description = "库存的分页查询、库存汇总")
 @RestController
 @RequestMapping("/inventory")
 public class InventoryController {

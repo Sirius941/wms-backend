@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Tag(name = "WarehouseController", description = "仓库管理接口")
+@Tag(name = "仓库管理接口", description = "仓库的增删改查接口")
 @RestController
 @RequestMapping("/warehouse")
 public class WarehouseController {

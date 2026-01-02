@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Tag(name="RackController", description="货架管理接口")
+@Tag(name = "货架管理接口", description = "货架的增删改查接口")
 @RestController
 @RequestMapping("/rack")
 public class RackController {

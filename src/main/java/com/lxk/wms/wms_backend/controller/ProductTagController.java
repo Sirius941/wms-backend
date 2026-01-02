@@ -5,11 +5,13 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.lxk.wms.wms_backend.common.Result;
 import com.lxk.wms.wms_backend.entity.ProductTag;
 import com.lxk.wms.wms_backend.service.ProductTagService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "产品标签管理接口", description = "产品标签的增删改查接口")
 @RestController
 @RequestMapping("/product-tag")
 public class ProductTagController {

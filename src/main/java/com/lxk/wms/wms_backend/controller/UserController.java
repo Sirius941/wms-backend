@@ -8,6 +8,7 @@ import com.lxk.wms.wms_backend.entity.User;
 import com.lxk.wms.wms_backend.service.UserService;
 import com.lxk.wms.wms_backend.utils.JwtUtils;
 import io.jsonwebtoken.Claims;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
+@Tag(name = "用户管理接口", description = "用户的登录、增删改查接口")
 @RestController
 @RequestMapping("/user")
 public class UserController {
