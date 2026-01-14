@@ -8,17 +8,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class JwtUtils {
-    // 密钥 (随便写，不要泄露)
-    private static final String SECRET = "WMS_SECRET_KEY_123456";
-    // 过期时间 24小时
-    private static final long EXPIRATION = 24 * 60 * 60 * 1000;
+    // 建议：密钥放在配置文件中，这里演示用
+    private static final String SECRET = "WMS_JAVABACKEND_SECRET_KEY_999999";
+    private static final long EXPIRATION = 24 * 60 * 60 * 1000; // 24小时
 
     // 生成 Token
     public static String generateToken(Long userId, String username, String role) {
         Map<String, Object> claims = new HashMap<>();
         claims.put("userId", userId);
         claims.put("username", username);
-        claims.put("role", role); // 把角色存进去
+        claims.put("role", role); // 关键：存入角色 (admin, product_manager, etc.)
 
         return Jwts.builder()
                 .setClaims(claims)
@@ -27,7 +26,7 @@ public class JwtUtils {
                 .compact();
     }
 
-    // 解析 Token 获取 Claims (包含用户信息)
+    // 解析 Token
     public static Claims getClaimsByToken(String token) {
         try {
             return Jwts.parser()
@@ -35,7 +34,7 @@ public class JwtUtils {
                     .parseClaimsJws(token)
                     .getBody();
         } catch (Exception e) {
-            return null; // 解析失败或过期
+            return null;
         }
     }
 }
